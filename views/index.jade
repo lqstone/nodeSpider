@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    h1 欢迎使用socket.io聊天室
+    input(id='name' name='name' placeholder='输入您的名字' onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')")
+    input(type='button' id='submit' value='进入聊天室')
+
+    script.
+        $('#submit').click(function () {
+            var name = $.trim($('#name').val());
+            if(name == ''){
+                alert("请输入名字");
+                return ;
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/getInfo',
+                data: {name: name},
+                success: function (data) {
+                    console.log(data);
+                    if(data.error === 0){
+                        location.href="/chat";
+                    }
+                },
+                error: function (err) {
+                    alert(err);
+                }
+            });
+
+        })

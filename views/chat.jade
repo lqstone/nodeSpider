@@ -1,0 +1,119 @@
+extends layout
+
+block content
+    div.chat-container.clearfix
+        div.panel
+            div.header
+                div.avatar
+                    <img class="img" src="/images/user.jpeg"  >
+                div.info
+                    h3.nickname
+                        span.display_name #{userName}
+            div.chat-list
+                h5 成员列表
+                ul#userList
+                    //li.contact_list
+                    //    div.contact_item
+                    //        div.avatar
+                    //            <img class="img" src="/images/user.jpeg"  >
+                    //        div.info
+                    //            h4.nickname 刘巧
+
+        div.chatBox
+            div.title_wrap 臭臭铲屎官聊天记录
+            div.scroll-box
+                div.scroll-content
+                    p
+            div.chats
+                textarea
+                div.btns.clearfix
+                    span.btn-send 发送
+                    em 按下Enter发送消息
+    script.
+        var socket = io.connect('/');
+
+        function getAndEmit() {
+            var message = $.trim($('textarea').val());
+            if (message === '') {
+                return false;
+            }
+            console.log(message)
+            socket.emit('clientMessage', message)
+            //socket.emit('login', '#{userName}');
+            $('textarea').val('')
+        }
+
+        //发送消息
+        $('.btn-send').click(function () {
+            getAndEmit()
+        })
+
+        $(document).keyup(function (e) {
+            if (e.keyCode == 13) {
+                getAndEmit()
+            }
+        });
+        $(document).ready(function () {
+            console.log("dddd")
+
+        })
+
+        socket.emit('login', '#{userName}');
+
+        socket.on('userList', function (data) {
+            console.log("userList====", data);
+            var html = '';
+            for(var i = 0; i < data.length; i++){
+                html += '<li class="contact_list"><div class="contact_item">' +
+                    '<div class="avatar"><img class="img" src="/images/user.jpeg"></div>' +
+                    '<div class="info"><h4 class="nickname">'+ data[i] +'</h4></div>' +
+                    '</div></li>'
+            }
+            $('#userList').html(html)
+        })
+        socket.on('userLeave', function (data) {
+            console.log("userList====", data);
+            var html = '';
+            for(var i = 0; i < data.length; i++){
+                html += '<li class="contact_list"><div class="contact_item">' +
+                    '<div class="avatar"><img class="img" src="/images/user.jpeg"></div>' +
+                    '<div class="info"><h4 class="nickname">'+ data[i] +'</h4></div>' +
+                    '</div></li>'
+            }
+            $('#userList').html(html)
+        })
+
+        socket.on('serverMessage', function (data) {
+            console.log(data);
+            if(data.name == '#{userName}'){
+                var html = '<p> ' + data.name + '：' + data.mes + ' </p>';
+            }else{
+                var html = '<p class="other"> ' + data.name + '：' + data.mes + ' </p>';
+            }
+
+            $('.scroll-content').append(html)
+        })
+
+        socket.on('userComeName', function (data) {
+            console.log(data);
+            console.log("ddddddddddddddddddd")
+            var html = '<p class="aline-center"> 【' + data + '】加入了群聊' +  ' </p>';
+            $('.scroll-content').append(html)
+        })
+
+        socket.on('userLeaveName', function (data) {
+            console.log(data);
+            console.log("ddddddddddddddddddd")
+            var html = '<p class="aline-center"> 【' + data + '】离开了群聊' +  ' </p>';
+            $('.scroll-content').append(html)
+        })
+
+        window.onload = function () {
+            console.log('/')
+            if(document.referrer == 'http://localhost:3000/'){
+                alert("刷新页面")
+            }else{
+                alert("first in")
+            }
+            console.log("ddddddddddddddddd", document.referrer)
+        };

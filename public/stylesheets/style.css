@@ -1,0 +1,275 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  color: #00B7FF;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size:0;
+}
+
+
+
+/*聊天室css*/
+html,body{
+  height: 100%;
+}
+body{
+  background: url(//res.wx.qq.com/a/wx_fed/webwx/res/static/img/2zrdI1g.jpg) no-repeat 50%;
+  background-size: cover;
+}
+.chat-container{
+  font-size: 20px;
+  max-width: 1000px;
+  min-width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  overflow: hidden;
+  padding-top: 30px;
+}
+.panel {
+  position: relative;
+  width: 280px;
+  height: 100%;
+  float: left;
+  background: #2e3238;
+  overflow: auto;
+}
+.header {
+  padding: 18px;
+  position: relative;
+}
+.header .avatar {
+  display: table-cell;
+  vertical-align: middle;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: nowrap;
+  padding-right: 10.625px;
+}
+.header .avatar .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: block;
+  cursor: pointer;
+}
+.header .info {
+  display: table-cell;
+  vertical-align: middle;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 2000px;
+}
+.header .info .nickname .display_name {
+  display: inline-block;
+  font-weight: 400;
+  width: 156px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  color: #fff;
+  font-size: 18px;
+  vertical-align: top;
+  line-height: 31px;
+  text-decoration: none;
+}
+.chat-list h5{
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+.chat-list ul{
+  position: relative;
+  background: #3c4047;
+  min-height: 100%;
+}
+
+.contact_list .contact_item {
+  overflow: hidden;
+  padding: 10px 18px 9px;
+  border-bottom: 1px solid #292c33;
+  cursor: pointer;
+}
+.contact_list .avatar {
+  float: left;
+  margin-right: 10px;
+}
+.contact_list .info {
+  overflow: hidden;
+  line-height: 30px;
+}
+.contact_list .avatar .img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.contact_list .info .nickname {
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+.chatBox{
+  position: relative;
+  width: 720px;
+  min-width: 520px;
+  height: 100%;
+  float: left;
+  background: #eee;
+  overflow: auto;
+}
+.title_wrap{
+  position: relative;
+  padding: 10px 0;
+  margin: 0 19px;
+  text-align: center;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #eee;
+  z-index: 1024;
+  font-size: 16px;
+}
+.scroll-box{
+  position: absolute;
+  bottom: 165px;
+  padding: 0 19px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow: hidden!important;
+  padding: 0!important;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  left: 0;
+}
+.scroll-content{
+  position: relative;
+  height: 400px;
+  bottom: 180px;
+  padding: 0 19px;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll-content p{
+  font-size: 14px;
+}
+.scroll-content p.other{
+  font-size: 14px;
+  color: red;
+}
+.scroll-content p.aline-center{
+  text-align: center;
+  font-size: 14px;
+  color: red;
+}
+.chats{
+  position: relative;
+  top: 400px;
+  height: 160px;
+  margin-right: 19px;
+  border-top: 1px solid #d6d6d6;
+}
+.chats textarea{
+  height: 100px;
+  background: #eee;
+  border: 0;
+  outline: none;
+  padding: 10px;
+  width: 700px;
+  font-size: 14px;
+  resize: none;
+}
+.chats .btns em{
+  float: right;
+  display: inline-block;
+  color: #888;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 7px;
+  vertical-align: middle;
+  margin-top: 8px;
+}
+.chats .btns span{
+  display: inline-block;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 3px 20px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #222;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  line-height: 20px;
+  float: right;
+}
+.chats .btns span:hover{
+  background-color: #f8f8f8;
+}
