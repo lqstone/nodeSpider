@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="692cfb5f-5916-4a54-ba09-19517a05e1eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chat.jade" afterPath="$PROJECT_DIR$/views/chat.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/chat.js" afterPath="$PROJECT_DIR$/utils/chat.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,8 +66,8 @@
       <file leaf-file-name="chat.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            <state relative-caret-position="382">
+              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -140,8 +140,8 @@
         <option value="$PROJECT_DIR$/routes/chat.js" />
         <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/utils/chat.js" />
         <option value="$PROJECT_DIR$/views/chat.jade" />
+        <option value="$PROJECT_DIR$/utils/chat.js" />
       </list>
     </option>
   </component>
@@ -399,12 +399,12 @@
       <workItem from="1508123570669" duration="3360000" />
       <workItem from="1508297738404" duration="12307000" />
       <workItem from="1508379591133" duration="17587000" />
-      <workItem from="1508469305409" duration="2961000" />
+      <workItem from="1508469305409" duration="3048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36215000" />
+    <option name="totallyTimeSpent" value="36302000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="382">
+          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding />
         </state>
       </provider>

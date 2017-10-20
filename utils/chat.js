@@ -37,7 +37,6 @@ exports.listen = function(server) {
             userList.splice(index, 1);
             console.log("userList", userList)
             io.emit("userLeave", userList)
-            socket.close();
         })
 
     });
