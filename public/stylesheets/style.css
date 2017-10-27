@@ -273,3 +273,104 @@ body{
 .chats .btns span:hover{
   background-color: #f8f8f8;
 }
+.choice-item{
+  display: block;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 60px;
+}
+.choice-item:hover{
+  color: #eee;
+}
+.chat-h1{
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 60px;
+}
+.chat-input{
+  margin-top: 60px;
+  text-align: center;
+}
+#name{
+  margin-right: 10px;
+}
+
+
+
+/*俄罗斯方块*/
+.game{
+  width: 200px;
+  height: 400px;
+  background-color: #F2FAFF;
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
+  border-bottom: 1px solid blue;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.gameAfter:after{
+  content: '按下G键开始游戏！';
+  display: block;
+  position: absolute;
+  z-index: 100;
+  font-size: 16px;
+  color: red;
+  text-align: center;
+  top: 40%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.gameover:after{
+  content: '你死啦！辣鸡哈！';
+  display: block;
+  position: absolute;
+  z-index: 100;
+  font-size: 16px;
+  color: red;
+  text-align: center;
+  top: 40%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.next{
+  width: 80px;
+  height: 80px;
+  background-color: #F2FAFF;
+  border: 1px solid blue;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+}
+.info{
+  position: absolute;
+  top: 100px;
+  left: 250px;
+}
+.none, .current, .done{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.none{
+  background-color: #809cad;
+}
+
+.current{
+  background-color: pink;
+  border: 1px solid red;
+}
+.done{
+  background-color: gray;
+  border: 1px solid black;
+}
+.text-desc{
+  font-size: 12px;
+  color: orangered;
+}

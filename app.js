@@ -6,9 +6,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var choice = require('./routes/choice');
 var index = require('./routes/index');
 var getInfo = require('./routes/getInfo');
+var getInfoTetris = require('./routes/getInfoTetris');
 var chat = require('./routes/chat');
+var tetris = require('./routes/tetris');
+var goTetris = require('./routes/goTetris');
 
 var app = express();
 
@@ -30,9 +34,13 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }))
-app.use('/', index);
+app.use('/', choice);
+app.use('/goChat', index);
 app.use('/getInfo', getInfo);
+app.use('/getInfoTetris', getInfoTetris);
+app.use('/goTetris', goTetris);
 app.use('/chat', chat);
+app.use('/tetris', tetris);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

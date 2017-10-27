@@ -1,9 +1,9 @@
 extends layout
 
 block content
-    h1.chat-h1 欢迎小伙砸来聊天室
+    h1.chat-h1 来耍俄罗斯方块啊！
     div.chat-input
-        input(id='name' name='name' placeholder='输入你的大名哦' onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\u4e00-\u9fa5]/g,''))" onkeyup="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'')")
+        input(id='name' name='name' placeholder='输入你的大名哦')
         input(type='button' id='submit' value='go')
 
     script.
@@ -15,12 +15,12 @@ block content
             }
             $.ajax({
                 type: 'POST',
-                url: '/getInfo',
+                url: '/getInfoTetris',
                 data: {name: name},
                 success: function (data) {
                     console.log(data);
                     if(data.error === 0){
-                        location.href="/chat";
+                        location.href="/tetris";
                     }
                 },
                 error: function (err) {
