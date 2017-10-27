@@ -217,9 +217,9 @@ var Game = function(){
 	// game over
 	var gameover = function(win){
 		if(win){
-			resultDiv.innerHTML = "你赢了";
+			// resultDiv.innerHTML = "你赢了";
 		}else{
-			resultDiv.innerHTML = "你输了";
+			// resultDiv.innerHTML = "你输了";
 		}
 	}
 	//  add score
