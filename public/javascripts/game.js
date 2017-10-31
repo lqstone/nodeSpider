@@ -217,9 +217,9 @@ var Game = function(){
 	// game over
 	var gameover = function(win){
 		if(win){
-			resultDiv.innerHTML = "你赢了";
+			resultDiv.innerHTML = "你赢了<a href='/tetris'>重新开始游戏</a>";
 		}else{
-			resultDiv.innerHTML = "你输了";
+			resultDiv.innerHTML = "你输了<a href='/tetris'>重新开始游戏</a>";
 		}
 	}
 	//  add score

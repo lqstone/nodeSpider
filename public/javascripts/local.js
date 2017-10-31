@@ -148,7 +148,7 @@ var Local = function(socket){
 		var i = 4 ;
 		setInterval(function () {
 			if(i > 0){
-                document.getElementById('waiting').innerHTML = '距离游戏开始还有' + i-- + 's';
+                document.getElementById('waiting').innerHTML = '已匹配到玩家，游戏倒计时：' + i-- + 's';
 			}else{
                 document.getElementById('waiting').innerHTML = '';
             }
