@@ -101,17 +101,23 @@
 // initNext()
 // refreshGame()
 // refreshNext()
+var socket = io('/');
+var local = new Local(socket);
+var remote = new Remote(socket);
+// remote.start(2, 2);
+// remote.bindEvents();
+// document.onkeydown = function(e) {
+//     if (e.keyCode == 71) { //游戏开始
+//         local.start();
+//         $('#local_game').removeClass('gameAfter');
+//         //
+//     }
+// }
 
-var local = new Local();
-document.onkeydown = function(e) {
-    if (e.keyCode == 71) { //游戏开始
-        local.start();
-        $('#game').removeClass('gameAfter');
-        //
-    }
-}
-
-
+socket.on('waiting', function(str){
+	// console.log("dddddddddd", str)
+	document.getElementById('waiting').innerHTML = str;
+})
 
 
 

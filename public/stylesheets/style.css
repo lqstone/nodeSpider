@@ -301,6 +301,16 @@ body{
 
 
 /*俄罗斯方块*/
+.square{
+  width: 440px;
+  height: 600px;
+  float: left;
+  margin-left: 20px;
+}
+.title{
+  font-size: 30px;
+  margin: 20px auto;
+}
 .game{
   width: 200px;
   height: 400px;
@@ -308,9 +318,8 @@ body{
   border-left: 1px solid blue;
   border-right: 1px solid blue;
   border-bottom: 1px solid blue;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: relative;
+  float: left;
 }
 .gameAfter:after{
   content: '按下G键开始游戏！';
@@ -338,19 +347,25 @@ body{
   right: 0;
   bottom: 0;
 }
+.add-right{
+  position: relative;
+  float: left;
+  width: 237px;
+}
 .next{
   width: 80px;
   height: 80px;
   background-color: #F2FAFF;
   border: 1px solid blue;
-  position: absolute;
-  top: 10px;
-  left: 250px;
+  position: relative;
+  /*float: left;*/
+  margin-left: 40px;
 }
 .info{
-  position: absolute;
-  top: 100px;
-  left: 250px;
+  position: relative;
+  float: left;
+  margin-left: 40px;
+  margin-top: 10px;
 }
 .none, .current, .done{
   width: 20px;
@@ -371,6 +386,30 @@ body{
   border: 1px solid black;
 }
 .text-desc{
-  font-size: 12px;
-  color: orangered;
+  font-size: 13px;
+  color: #0111d6;
+  line-height: 20px;
+  font-weight: bold;
+}
+.add-style{
+  font-size: 16px;
+  line-height: 40px;
+}
+.add-input{
+  font-size: 16px;
+  line-height: 40px;
+  background:none;
+  outline:none;
+  border:0px;
+}
+#local_score, #remote_score{
+  color: #e81b1b;
+  font-weight: bold;
+}
+button{
+  display: block;
+}
+#waiting{
+  color: red;
+  line-height: 40px;
 }

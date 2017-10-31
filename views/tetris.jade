@@ -1,18 +1,45 @@
 extends layout
 block content
-    <div class="game gameAfter" id="game"></div>
-    <div class="next" id="next"></div>
+    <div class="square" id="local">
+    <div class="title" id="title">我的游戏区域</div>
+    <div id="waiting"></div>
+    <div class="game " id="local_game"></div>
+    <div class="add-right">
+    <div class="next" id="local_next"></div>
     <div class="info">
     <div class="text-desc"> 按下G键开始游戏 </div>
-    <div class="text-desc"> 使用键盘← → ↓控制方块的左右 空格键直接落下  ↑ 控制变形 </div>
-    <div style="margin: 5px 0;">#{tetrisName}</div>
-    <div style="margin: 5px 0;">已用时：<span id="time">0</span> s</div>
-    <div style="margin: 5px 0;">已得分：<span id="score">0</span> 分</div>
-    <div style="margin: 5px 0;" id="gameover"></div>
+    <div class="text-desc"> 使用键盘← → ↓控制方块的左右 <br>空格键直接落下  ↑ 控制变形 </div>
+    <input type="text" class="add-input" id="myName" value="#{tetrisName}"></input>
+    <div class="add-style">已用时：<span id="local_time">0</span> s</div>
+    <div class="add-style">已得分：<span id="local_score">0</span> 分</div>
+    <div class="add-style" id="local_gameover"></div>
     </div>
+    </div>
+    </div>
+    <div class="square" id="remote">
+    <div class="title" id="title">对方的游戏区域</div>
+    <div class="game " id="remote_game"></div>
+    <div class="add-right">
+    <div class="next" id="remote_next"></div>
+    <div class="info">
+    <div class="text-desc"> 按下G键开始游戏 </div>
+    <div class="text-desc"> 使用键盘← → ↓控制方块的左右 <br>空格键直接落下  ↑ 控制变形 </div>
+    <input type="text" class="add-input" id="anotherName" value=""></input>
+    <div class="add-style">已用时：<span id="remote_time">0</span> s</div>
+    <div class="add-style">已得分：<span id="remote_score">0</span> 分</div>
+    <div class="add-style" id="remote_gameover"></div>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script type="text/javascript" src="/javascripts/square.js"></script>
     <script type="text/javascript" src="/javascripts/squareFactory.js"></script>
     <script type="text/javascript" src="/javascripts/game.js"></script>
     <script type="text/javascript" src="/javascripts/local.js"></script>
     <script type="text/javascript" src="/javascripts/remote.js"></script>
     <script type="text/javascript" src="/javascripts/script.js"></script>
+
+
+
+
+    

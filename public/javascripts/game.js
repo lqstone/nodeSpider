@@ -26,7 +26,7 @@ var Game = function(){
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	];
 	// 当前方块
 	var cur;
@@ -217,9 +217,9 @@ var Game = function(){
 	// game over
 	var gameover = function(win){
 		if(win){
-			// resultDiv.innerHTML = "你赢了";
+			resultDiv.innerHTML = "你赢了";
 		}else{
-			// resultDiv.innerHTML = "你输了";
+			resultDiv.innerHTML = "你输了";
 		}
 	}
 	//  add score
@@ -243,8 +243,10 @@ var Game = function(){
 		}
 		score = score + s;
 		scoreDiv.innerHTML = score;
-
 	}
+	var resetScore = function () {
+        scoreDiv.innerHTML = '0';
+    }
 	// 底部增加行  游戏难度
 	var addTailLine = function(lines){
 		for(var i = 0;i < gameData.length - lines.length; i++){
@@ -292,6 +294,7 @@ var Game = function(){
 	this.addScore = addScore;
 	this.gameover = gameover;
 	this.addTailLine = addTailLine;
+	this.resetScore = resetScore;
 }
 
 
