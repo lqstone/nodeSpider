@@ -37,6 +37,10 @@ var Local = function(socket){
 			if(line){
 				game.addScore(line);
 				socket.emit('line', line);
+				if(line > 1){
+					var bottomLines = generateBottomLine(line);
+					socket.emit('bottomLines', bottomLines);
+				}
 			}
 			var gameOver = game.checkGameOver();
 			if(gameOver){
@@ -62,7 +66,7 @@ var Local = function(socket){
 			time +=  1;
 			game.setTime(time);
 			if(time % 5 == 0){
-				game.addTailLine(generateBottomLine(1));
+				// game.addTailLine(generateBottomLine(1));
 			}
 			socket.emit('time', time);
 		}
@@ -161,6 +165,10 @@ var Local = function(socket){
 	socket.on('anotherName', function (data) {
 		console.log("local_anotherName", data);
 		$('#anotherName').val(data);
+    })
+	socket.on('bottomLines', function (data) {
+		game.addTailLine(data);
+		socket.emit('addTailLine', data);
     })
 	socket.on('leave', function () {
 		document.getElementById('local_gameover').innerHTML = "对方掉线了";

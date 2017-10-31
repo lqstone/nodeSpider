@@ -55,6 +55,9 @@ var Remote = function(socket){
 		socket.on('anotherName', function (data) {
 			console.log('anotherName------remote', data)
         });
+		socket.on('addTailLine', function (data) {
+			game.addTailLine(data);
+        });
 	}
     bindEvents();
 	// this.start = start;

@@ -60,6 +60,8 @@ exports.listen = function(server) {
         bindListener(socket, 'time');
         bindListener(socket, 'lose');
         bindListener(socket, 'anotherName');
+        bindListener(socket, 'bottomLines');
+        bindListener(socket, 'addTailLine');
 
         socket.on('disconnect', function (data) {
             if(socket.clientNum % 2 == 0){
